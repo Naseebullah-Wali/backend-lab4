@@ -95,6 +95,6 @@ public class Point {
     public void intersectPoint() {
         hitResult = ((x <= 0 && y <= 0) && (y >= -r/2 && x >= -r)  ||
                 ((x*x + y*y) <= (r*r/4)) && x <= 0 && y >= 0) ||
-                ((y <= -r + x/2) && (x <= r) && (y <= r) && (x >= 0) && (y >= 0));
+                ((y <= r + x/2) && (x <= r) && (y <= r) && (x >= 0) && (y >= 0));
     }
 }

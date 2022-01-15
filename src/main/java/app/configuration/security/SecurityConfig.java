@@ -58,13 +58,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 )
                 .and();
 
-        http.authorizeRequests()
+        http
+                .addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class)
+                .authorizeRequests()
                 .antMatchers("/user/login").permitAll()
                 .antMatchers("/user/register").permitAll()
                 .antMatchers("/points").hasAuthority(UserRole.ROLE_REGULAR.getAuthority())
                 .antMatchers("/points/**").hasAuthority(UserRole.ROLE_REGULAR.getAuthority());
 
-        http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
+//        http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
     @Override

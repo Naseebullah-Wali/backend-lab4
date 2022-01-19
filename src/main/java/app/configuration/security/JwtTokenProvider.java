@@ -14,7 +14,7 @@ public class JwtTokenProvider {
     private final Logger log = LoggerFactory.getLogger(JwtTokenProvider.class);
 
     private final String secret = "N6Fi8#@2fc4c1x!d";
-    private final String issuer = "lab4_spynad";
+    private final String issuer = "lab4";
 
     public JwtTokenProvider() {}
 
